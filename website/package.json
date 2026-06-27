@@ -1,0 +1,13 @@
+{
+  "name": "uchicago-for-venezuela-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page + donation registration for UChicago For Venezuela earthquake relief.",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "approve": "node scripts/approve-donation.mjs"
+  }
+}

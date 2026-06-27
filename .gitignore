@@ -1,0 +1,9 @@
+# Local dev tooling / preview config
+.claude/
+
+# Node
+node_modules/
+.netlify/
+
+# OS
+.DS_Store
