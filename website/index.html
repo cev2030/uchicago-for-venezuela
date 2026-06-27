@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UChicago For Venezuela — Earthquake Relief</title>
+  <meta name="description" content="Mobilizing the UChicago community to donate, fund relief supplies, and support Venezuelan students and their families after the 2026 earthquakes." />
+  <meta property="og:title" content="UChicago For Venezuela — Earthquake Relief" />
+  <meta property="og:description" content="Donate to fund relief supplies and support Venezuelan students and families after the 2026 earthquakes. Tax-deductible through 1001 Ideas, INC (501(c)(3))." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="brand" aria-label="UChicago For Venezuela home">
+        <span class="brand__flag" aria-hidden="true"></span>
+        <span class="brand__text">UChicago&nbsp;<em>for</em>&nbsp;Venezuela</span>
+      </a>
+
+      <input type="checkbox" id="navToggle" class="nav__checkbox" />
+      <label for="navToggle" class="nav__burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="#news">News</a>
+        <a href="#donate" class="nav__cta">Donate</a>
+        <a href="#impact">Where it goes</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+    <div class="tricolor" aria-hidden="true"><i></i><i></i><i></i></div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="top">
+    <div class="hero__content">
+      <p class="hero__eyebrow">A UChicago community relief effort</p>
+      <h1 class="hero__title">Stand with Venezuela after the 2026 earthquakes.</h1>
+      <p class="hero__lede">
+        Mobilizing the UChicago community to donate, fund relief supplies, and
+        support Venezuelan students and their families after the 2026 earthquakes.
+      </p>
+      <div class="hero__actions">
+        <a href="#donate" class="btn btn--gold">Donate now</a>
+        <a href="#news" class="btn btn--ghost">Read what happened</a>
+      </div>
+      <p class="hero__note">
+        Donations are received by <strong>1001&nbsp;Ideas, INC</strong>, a U.S.
+        501(c)(3) nonprofit — gifts from U.S. taxpayers are tax-deductible to the
+        extent allowed by law.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== NEWS ===================== -->
+  <section class="section" id="news">
+    <div class="container">
+      <header class="section__head">
+        <span class="kicker">Stay informed</span>
+        <h2>What is happening in Venezuela</h2>
+        <p class="section__sub">
+          On June 24, 2026, two major earthquakes (magnitude 7.2 and 7.5) struck
+          north-central Venezuela near San Felipe, Yaracuy, devastating Caracas
+          and La Guaira. Below is a curated set of reports from verified,
+          mainstream English-language outlets so you can inform yourself.
+        </p>
+      </header>
+      <div id="newsGrid" class="news-grid">
+        <p class="loading">Loading news…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DONATE ===================== -->
+  <section class="section section--accent" id="donate">
+    <div class="container">
+      <header class="section__head">
+        <span class="kicker">Make an impact</span>
+        <h2>Donate</h2>
+        <p class="section__sub">
+          The fastest way to help is <strong>Zelle</strong> (no fees, near-instant).
+          Bank transfer is also available. After you send your gift, upload your
+          confirmation below so we can record and acknowledge it.
+        </p>
+      </header>
+
+      <div class="donate-grid">
+        <!-- HOW TO DONATE -->
+        <div class="card donate-info">
+          <h3>How to donate</h3>
+
+          <div class="method">
+            <div class="method__head"><span class="badge badge--gold">Preferred</span><h4>Zelle</h4></div>
+            <p>Send through your bank app to:</p>
+            <p class="copyrow">
+              <code id="zelleEmail">finanzasmiliun@gmail.com</code>
+              <button class="copybtn" data-copy="finanzasmiliun@gmail.com">Copy</button>
+            </p>
+            <p class="muted">Recipient shows as <strong>1001 Ideas, INC</strong>. Add the note “Venezuela earthquake relief.”</p>
+          </div>
+
+          <div class="method">
+            <div class="method__head"><h4>Bank transfer (wire / ACH)</h4></div>
+            <table class="bank">
+              <tr><th>Account name</th><td>1001 Ideas, INC</td></tr>
+              <tr><th>Bank</th><td>Bank of America</td></tr>
+              <tr><th>Account #</th><td>[REDACTED]</td></tr>
+              <tr><th>Routing #</th><td>[REDACTED]</td></tr>
+              <tr><th>SWIFT (intl.)</th><td>[REDACTED]</td></tr>
+              <tr><th>Address</th><td>3006 Aviation Ave, Ste 2A, Coconut Grove, FL 33133</td></tr>
+            </table>
+            <p class="muted">Reference: “Venezuela earthquake relief.” Your bank may charge a wire fee; Zelle does not.</p>
+          </div>
+        </div>
+
+        <!-- UPLOAD FORM -->
+        <div class="card donate-form">
+          <h3>Register your donation</h3>
+          <p class="muted">Already sent your gift? Upload the confirmation screenshot so we can verify and acknowledge it. Every donation gets a unique tracking code.</p>
+
+          <form id="donationForm" novalidate>
+            <label class="field">
+              <span>Your name</span>
+              <input type="text" name="name" id="donorName" placeholder="First and last name" autocomplete="name" />
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="anonymous" id="anonymous" />
+              <span>Make my donation anonymous (name will not be shown publicly)</span>
+            </label>
+
+            <div class="field-row">
+              <label class="field">
+                <span>Amount *</span>
+                <input type="number" name="amount" id="amount" min="1" step="0.01" placeholder="50.00" required />
+              </label>
+              <label class="field field--narrow">
+                <span>Currency</span>
+                <select name="currency" id="currency">
+                  <option value="USD">USD</option>
+                  <option value="VES">VES</option>
+                  <option value="EUR">EUR</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Method</span>
+              <select name="method" id="method">
+                <option value="Zelle">Zelle</option>
+                <option value="Wire/ACH">Bank transfer (wire/ACH)</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Email (optional — for your receipt)</span>
+              <input type="email" name="email" id="email" placeholder="you@uchicago.edu" autocomplete="email" />
+            </label>
+
+            <label class="field">
+              <span>Transfer screenshot *</span>
+              <input type="file" name="screenshot" id="screenshot" accept="image/*" required />
+              <small class="muted">Kept private for verification only — never published. Max 5&nbsp;MB.</small>
+            </label>
+
+            <button type="submit" class="btn btn--maroon" id="submitBtn">Submit donation</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- DONOR WALL -->
+      <div class="donors">
+        <h3>Recent donors</h3>
+        <p class="muted">Verified donations appear here after review. Thank you for standing with Venezuela. 💛</p>
+        <div id="donorWall" class="donor-wall"><p class="loading">Loading…</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <span class="kicker">Who receives your gift</span>
+          <h2>1001 Ideas, INC</h2>
+          <p>
+            For more than <strong>10 years</strong>, 1001 Ideas, INC has worked
+            across <strong>Venezuela and Latin America</strong> supporting young
+            people through social innovation, development, and institution-building.
+          </p>
+          <p>
+            They will be responsible for <strong>purchasing the relief supplies</strong>
+            and delivering support <strong>directly to student organizations in
+            Caracas</strong>. Every step is meant to be <strong>accountable and
+            transparent</strong> — so donors can always see where their
+            contributions go.
+          </p>
+          <ul class="ticks">
+            <li>U.S.-registered 501(c)(3) nonprofit</li>
+            <li>10+ years on the ground in Venezuela &amp; LatAm</li>
+            <li>Direct delivery to student organizations in Caracas</li>
+            <li>Public, itemized record of supplies bought &amp; delivered</li>
+          </ul>
+        </div>
+        <aside class="card trust">
+          <h3>Tax-deductible giving</h3>
+          <p>If you are a U.S. taxpayer and itemize deductions, your gift is
+          deductible to the extent allowed by law. You receive no goods or
+          services in return, so the full amount generally qualifies.</p>
+          <p class="muted">For any single gift of $250+, request a written
+          acknowledgment by emailing <a href="mailto:finanzasmiliun@gmail.com">finanzasmiliun@gmail.com</a>.</p>
+          <p class="muted">Verify status via the IRS
+          <a href="https://www.irs.gov/charities-non-profits/tax-exempt-organization-search" target="_blank" rel="noopener">Tax Exempt Organization Search</a>.</p>
+          <p class="fineprint">This is general information, not legal or tax advice.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== IMPACT / WHERE IT GOES ===================== -->
+  <section class="section section--accent" id="impact">
+    <div class="container">
+      <header class="section__head">
+        <span class="kicker">Full transparency</span>
+        <h2>Where your donation goes</h2>
+        <p class="section__sub">
+          Funds buy the supplies most needed on the ground — medical supplies,
+          food, rescue equipment, hygiene items, and logistics. Below is the
+          current needs list, followed by a live record of what has actually been
+          purchased and delivered.
+        </p>
+      </header>
+
+      <div class="impact-tabs">
+        <h3>Supplies needed</h3>
+        <div id="suppliesTable" class="table-wrap"><p class="loading">Loading supplies…</p></div>
+      </div>
+
+      <div class="impact-tabs">
+        <h3>Supplies bought &amp; delivered</h3>
+        <p class="muted">Updated as purchases are made. This is our public accountability ledger.</p>
+        <div id="boughtTable" class="table-wrap"><p class="loading">Loading…</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <span class="brand__text brand__text--footer">UChicago&nbsp;<em>for</em>&nbsp;Venezuela</span>
+        <p class="muted">A community relief effort. Donations received by 1001 Ideas, INC (501(c)(3)).</p>
+      </div>
+      <nav class="footer__links">
+        <a href="#news">News</a>
+        <a href="#donate">Donate</a>
+        <a href="#impact">Where it goes</a>
+        <a href="#about">About</a>
+        <a href="mailto:finanzasmiliun@gmail.com">Contact</a>
+      </nav>
+    </div>
+    <div class="tricolor tricolor--footer" aria-hidden="true"><i></i><i></i><i></i></div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

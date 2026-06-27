@@ -1,0 +1,15 @@
+# Netlify deploy config for the UChicago For Venezuela landing page.
+# Publish the website folder as the site root and expose the donate function.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Friendly URL alias for the function (optional)
+[[redirects]]
+  from = "/api/donate"
+  to = "/.netlify/functions/donate"
+  status = 200
