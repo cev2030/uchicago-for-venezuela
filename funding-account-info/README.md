@@ -81,7 +81,7 @@ the U.S. Internal Revenue Code.
 |---|---|
 | **Legal name** | 1001 Ideas, INC |
 | **Tax status** | 501(c)(3) nonprofit |
-| **EIN (Employer Identification Number)** | _[TO BE PROVIDED]_ |
+| **EIN (Employer Identification Number)** | 32-0577080 |
 | **Mailing address** | 3006 Aviation Ave, Ste 2A, Coconut Grove, FL 33133 |
 | **Contact** | finanzasmiliun@gmail.com |
 
