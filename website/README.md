@@ -82,6 +82,51 @@ GITHUB_TOKEN=ghp_xxx PUBLIC_REPO=uchicago-for-venezuela PRIVATE_REPO=uchicago-fo
 
 ---
 
+## Hosting on GitHub Pages (uchicagoforvenezuela.com)
+
+The repo includes a workflow (`.github/workflows/pages.yml`) that publishes the
+`website/` folder to GitHub Pages on every push to `main`, and a `CNAME` file
+pinning the custom domain.
+
+> ⚠️ **Important:** GitHub Pages serves **static files only** — it **cannot run
+> the donation serverless function** (`netlify/functions/donate.js`). The page,
+> news, supplies, and donor wall all work on Pages, but **the donation upload
+> form's Submit needs a backend hosted elsewhere.** Options:
+> 1. Deploy just the function to **Cloudflare Workers / Netlify / Vercel** and
+>    set `CONFIG.donateEndpoint` in `app.js` to that full URL, or
+> 2. Host the whole site on **Netlify** instead (does static + functions) and
+>    point the domain there.
+> Until then, leave the form as-is (it shows the bank/Zelle info, which is what
+> most donors use anyway).
+
+### One-time GitHub setup
+1. Push to `main` (the workflow runs automatically).
+2. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. Repo **Settings → Pages → Custom domain**: confirm `uchicagoforvenezuela.com`
+   is set (the `CNAME` file pre-fills it), then tick **Enforce HTTPS** once the
+   certificate is issued (can take a few minutes to an hour).
+
+### Porkbun DNS records
+In Porkbun → your domain → **DNS**, add these (delete any conflicting default
+A/ALIAS records first):
+
+| Type | Host | Answer / Value |
+|------|------|----------------|
+| A | (blank / `@`) | `185.199.108.153` |
+| A | (blank / `@`) | `185.199.109.153` |
+| A | (blank / `@`) | `185.199.110.153` |
+| A | (blank / `@`) | `185.199.111.153` |
+| AAAA | (blank / `@`) | `2606:50c0:8000::153` |
+| AAAA | (blank / `@`) | `2606:50c0:8001::153` |
+| AAAA | (blank / `@`) | `2606:50c0:8002::153` |
+| AAAA | (blank / `@`) | `2606:50c0:8003::153` |
+| CNAME | `www` | `cev2030.github.io.` |
+
+DNS can take 10 minutes to a few hours to propagate. The site will then be live
+at `https://uchicagoforvenezuela.com`.
+
+---
+
 ## Keeping content fresh
 The page reads these CSVs **live** from the public repo `main` branch — just edit
 the CSVs and the site updates on next load:
