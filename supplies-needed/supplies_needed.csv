@@ -1,0 +1,60 @@
+category,item_en,item_es,unit,est_unit_cost_usd,notes
+Medical Supplies,IV catheter,Catéter,each,0.75,Intravenous catheter
+Medical Supplies,IV cannula (Yelco),Yelmos,each,0.50,"""Yelco"" is the common Venezuelan name for an IV cannula"
+Medical Supplies,Adrenaline (epinephrine),Adrenalina,ampoule,1.50,Emergency cardiac/anaphylaxis drug
+Medical Supplies,Morphine,Morfinas,ampoule,4.00,Controlled analgesic
+Medical Supplies,Sutures,Suturas,each,1.50,Surgical suture pack
+Medical Supplies,Antibiotics,Antibióticos,course/box,8.00,Price varies widely by type
+Medical Supplies,IV fluids / saline solution,Sueros / Soluciones salinas,bag,2.00,Saline / Ringer's solution
+Medical Supplies,Hypertension medication,Medicamentos para hipertensión,box,5.00,General category
+Medical Supplies,Asthma medication (inhaler),Medicamentos para asma,inhaler,8.00,Listed twice in original
+Medical Supplies,Insulin,Insulina,vial,10.00,Refrigeration required
+Medical Supplies,Iodine (antiseptic),Iodo,bottle,2.00,Povidone-iodine
+Medical Supplies,Diclofenac,Diclofenac,box,3.00,Anti-inflammatory / pain
+Medical Supplies,Rubbing alcohol,Alcohol,bottle,1.50,Antiseptic
+Medical Supplies,Hydrogen peroxide,Agua oxigenada,bottle,1.50,Antiseptic
+Medical Supplies,Gauze,Gasas,pack,2.00,Sterile gauze
+Medical Supplies,Bandages,Vendas,roll,1.50,Elastic/cloth bandage
+Medical Supplies,Adhesive tape / plasters,Adhesivos,roll/pack,2.00,Medical adhesive tape
+Medical Supplies,Surgical gloves,Guantes quirúrgicos,box of 100,6.00,Latex/nitrile
+Medical Supplies,Acetaminophen,Acetaminofen,box,2.00,Analgesic / antipyretic
+Medical Supplies,Eye drops,Gotas para los ojos,bottle,3.00,
+Medical Supplies,Captopril,Captopril,box,3.00,Hypertension; listed twice in original
+Medical Supplies,Pediatric medications,Medicamentos pediátricos,box,5.00,General category
+Medical Supplies,Thiocolchicoside,Tiochicosido (Thiocolchicoside),box,5.00,Muscle relaxant
+Medical Supplies,Compresses,Compresas,pack,2.00,Medical compresses
+Food,Non-perishable food (no cooking),Alimentos no perecederos,item/can,1.50,Ready-to-eat items
+Food,Drinking water,Agua,gallon,1.00,
+Food,Baby formula,Fórmulas para bebé,can,10.00,
+Food,Protein (canned/meat/powdered),"Proteínas (enlatados, carne, en polvo)",item,3.00,"Canned goods already received: grains, mortadella, sardines, tuna, pâté, etc."
+Clothing,Footwear,Calzado,pair,10.00,
+Hygiene & Other,Diapers,Pañales,pack,8.00,
+Hygiene & Other,Wet wipes,Toallas húmedas,pack,2.00,
+Hygiene & Other,Sanitary pads,Toallas sanitarias,pack,1.50,
+Hygiene & Other,Deodorant,Desodorante,each,2.50,
+Hygiene & Other,Soap,Jabón,bar,1.00,
+Hygiene & Other,Toothpaste,Pasta dental,tube,1.50,
+Hygiene & Other,Toothbrushes,Cepillos dentales,each,1.00,
+Rescue,Flashlights,Linternas,each,5.00,Marked important in original list
+Rescue,Batteries,Pilas,pack,3.00,
+Rescue,Pincers / pliers,Tenazas,each,4.00,
+Rescue,Hacksaws,Seguetas,each,5.00,
+Rescue,Bolt cutters / shears,Cizallas,each,12.00,
+Rescue,Pickaxes,Picos,each,10.00,
+Rescue,Shovels,Palas,each,8.00,
+Rescue,Hydraulic jacks,Gatos hidráulicos,each,25.00,For lifting rubble
+Rescue,Sledgehammers,Mandarrias,each,12.00,
+Rescue,Hammers,Martillos,each,6.00,
+Rescue,Work gloves,Guantes de construcción,pair,3.00,
+Rescue,Hard hats / helmets,Cascos,each,8.00,
+Rescue,Power banks,Baterías/Powerbanks,each,15.00,
+Rescue,Disposable cups/plates/cutlery,"Vasos, platos y cubiertos descartables",pack,3.00,
+Rescue,Lime (calcium oxide),Cal,bag,3.00,Sanitation / handling of remains
+Rescue,Formaldehyde (formalin),Formol,bottle,5.00,Preservation / sanitation
+Logistics,Black garbage bags,Bolsas negras,pack,3.00,
+Logistics,Boxes,Cajas,each,1.00,
+Logistics,Packing tape,Teipe de embalar,roll,2.00,
+Logistics,Ream of paper,Resma de papel,ream,5.00,
+Logistics,Masking tape,Tirro normal,roll,1.50,
+Logistics,Pens,Bolígrafos,each,0.50,
+Logistics,Markers,Marcadores,each,1.00,
