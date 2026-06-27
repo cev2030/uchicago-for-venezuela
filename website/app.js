@@ -14,6 +14,13 @@ const CONFIG = {
   // Serverless endpoint that records a pending donation (see netlify/functions/donate.js)
   donateEndpoint: "/.netlify/functions/donate",
   maxUploadBytes: 5 * 1024 * 1024,
+  // Only these articles are shown on the landing page (in this order).
+  // The full dataset still lives in the news CSV.
+  featuredNews: [
+    "https://www.cnn.com/2026/06/26/world/live-news/venezuela-earthquake-hnk",
+    "https://www.npr.org/2026/06/26/nx-s1-5870651/venezuela-earthquakes-caracas",
+    "https://www.foxweather.com/extreme-weather/venezuela-death-toll-injured-search-rescue-missing-deadly-earthquakes-doublet.amp",
+  ],
 };
 
 /* ---------- tiny CSV parser (handles quoted fields) ---------- */
@@ -55,9 +62,14 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, m =>
 async function loadNews() {
   const el = document.getElementById("newsGrid");
   try {
-    const rows = await fetchCSV(CONFIG.newsCsv);
-    if (!rows.length) { el.innerHTML = `<p class="empty">No articles yet.</p>`; return; }
-    el.innerHTML = rows.map(r => `
+    const all = await fetchCSV(CONFIG.newsCsv);
+    // Keep only the featured articles, in the configured order.
+    const rows = CONFIG.featuredNews
+      .map(url => all.find(r => r.url === url))
+      .filter(Boolean);
+    const list = rows.length ? rows : all;
+    if (!list.length) { el.innerHTML = `<p class="empty">No articles yet.</p>`; return; }
+    el.innerHTML = list.map(r => `
       <article class="news-card">
         <span class="src">${esc(r.source)}</span>
         <a class="title" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>

@@ -1,34 +1,33 @@
 category,item_en,item_es,unit,est_unit_cost_usd,notes
-Medical Supplies,IV catheter,Catéter,each,0.75,Intravenous catheter
-Medical Supplies,IV cannula (Yelco),Yelmos,each,0.50,"""Yelco"" is the common Venezuelan name for an IV cannula"
+Medical Supplies,Peripheral IV catheter,Catéter,each,10.34,Intravenous catheter
 Medical Supplies,Adrenaline (epinephrine),Adrenalina,ampoule,1.50,Emergency cardiac/anaphylaxis drug
 Medical Supplies,Morphine,Morfinas,ampoule,4.00,Controlled analgesic
-Medical Supplies,Sutures,Suturas,each,1.50,Surgical suture pack
+Medical Supplies,Sutures,Nylon sutura kit,each,8.40,Surgical suture pack
 Medical Supplies,Antibiotics,Antibióticos,course/box,8.00,Price varies widely by type
-Medical Supplies,IV fluids / saline solution,Sueros / Soluciones salinas,bag,2.00,Saline / Ringer's solution
+Medical Supplies,IV fluids / saline solution,Sueros / Soluciones salinas,bag,3.40,Saline / Ringer's solution
 Medical Supplies,Hypertension medication,Medicamentos para hipertensión,box,5.00,General category
-Medical Supplies,Asthma medication (inhaler),Medicamentos para asma,inhaler,8.00,Listed twice in original
-Medical Supplies,Insulin,Insulina,vial,10.00,Refrigeration required
-Medical Supplies,Iodine (antiseptic),Iodo,bottle,2.00,Povidone-iodine
+Medical Supplies,Asthma medication (inhaler),Medicamentos para asma,inhaler,8.99,Listed twice in original
+Medical Supplies,Insulin,Insulina,vial,36.25,Refrigeration required
+Medical Supplies,Iodine (antiseptic),Iodo,bottle,10.50,Povidone-iodine
 Medical Supplies,Diclofenac,Diclofenac,box,3.00,Anti-inflammatory / pain
-Medical Supplies,Rubbing alcohol,Alcohol,bottle,1.50,Antiseptic
+Medical Supplies,Rubbing alcohol,Alcohol,bottle,2.20,Antiseptic
 Medical Supplies,Hydrogen peroxide,Agua oxigenada,bottle,1.50,Antiseptic
-Medical Supplies,Gauze,Gasas,pack,2.00,Sterile gauze
-Medical Supplies,Bandages,Vendas,roll,1.50,Elastic/cloth bandage
-Medical Supplies,Adhesive tape / plasters,Adhesivos,roll/pack,2.00,Medical adhesive tape
+Medical Supplies,Gauze,Gasas,pack,1.40,Sterile gauze
+Medical Supplies,Bandages,Vendas,roll,1.60,Elastic/cloth bandage
+Medical Supplies,Adhesive tape / plasters,Adhesivos,roll/pack,6.50,Medical adhesive tape
 Medical Supplies,Surgical gloves,Guantes quirúrgicos,box of 100,6.00,Latex/nitrile
 Medical Supplies,Acetaminophen,Acetaminofen,box,2.00,Analgesic / antipyretic
-Medical Supplies,Eye drops,Gotas para los ojos,bottle,3.00,
-Medical Supplies,Captopril,Captopril,box,3.00,Hypertension; listed twice in original
-Medical Supplies,Pediatric medications,Medicamentos pediátricos,box,5.00,General category
+Medical Supplies,Eye drops,Gotas para los ojos,bottle,7.00,
+Medical Supplies,Captopril,Captopril,box,4.55,Hypertension; listed twice in original
+Medical Supplies,Pediatric medications,Medicamentos pediátricos,box,8.00,General category
 Medical Supplies,Thiocolchicoside,Tiochicosido (Thiocolchicoside),box,5.00,Muscle relaxant
-Medical Supplies,Compresses,Compresas,pack,2.00,Medical compresses
-Food,Non-perishable food (no cooking),Alimentos no perecederos,item/can,1.50,Ready-to-eat items
-Food,Drinking water,Agua,gallon,1.00,
-Food,Baby formula,Fórmulas para bebé,can,10.00,
+Medical Supplies,Compresses,Compresas,pack,4.00,Medical compresses
+Food,Non-perishable food (no cooking),Alimentos no perecederos,item/can,2.50,Ready-to-eat items
+Food,Drinking water,Agua,gallon,1.62,
+Food,Baby formula,Fórmulas para bebé,can,16.00,
 Food,Protein (canned/meat/powdered),"Proteínas (enlatados, carne, en polvo)",item,3.00,"Canned goods already received: grains, mortadella, sardines, tuna, pâté, etc."
-Clothing,Footwear,Calzado,pair,10.00,
-Hygiene & Other,Diapers,Pañales,pack,8.00,
+Clothing,Footwear,Calzado,pair,12.00,
+Hygiene & Other,Diapers,Pañales,pack,10.00,
 Hygiene & Other,Wet wipes,Toallas húmedas,pack,2.00,
 Hygiene & Other,Sanitary pads,Toallas sanitarias,pack,1.50,
 Hygiene & Other,Deodorant,Desodorante,each,2.50,
