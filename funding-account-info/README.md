@@ -44,7 +44,7 @@ details below.
 | **Bank** | Bank of America |
 | **Account number** | [REDACTED] |
 | **Routing number** | [REDACTED] |
-| **Account / bank address** | 3006 Aviation Ave, Ste 2A, Coconut Grove, FL 33133 |
+| **Account / bank address** | 1400 NW 107th Ave, Suite 203, Miami, FL 33172 |
 
 Notes:
 - The routing number above (`[REDACTED]`) is Bank of America's **Florida
@@ -72,7 +72,8 @@ the U.S. Internal Revenue Code.
   **full amount** is generally deductible.
 - **Keep a record of every gift.** A bank/Zelle confirmation is sufficient for
   most gifts. For any **single donation of $250 or more**, the IRS requires a
-  **written acknowledgment from the organization** — email us to request one.
+  **written acknowledgment from the organization** — request one by emailing
+  **1001ideasvenezuela@gmail.com**.
 - Deductions are claimed for the tax year in which the gift is made.
 
 ### Organization details (for your records / receipt)
@@ -82,8 +83,8 @@ the U.S. Internal Revenue Code.
 | **Legal name** | 1001 Ideas, INC |
 | **Tax status** | 501(c)(3) nonprofit |
 | **EIN (Employer Identification Number)** | 32-0577080 |
-| **Mailing address** | 3006 Aviation Ave, Ste 2A, Coconut Grove, FL 33133 |
-| **Contact** | finanzasmiliun@gmail.com |
+| **Mailing address** | 1400 NW 107th Ave, Suite 203, Miami, FL 33172 |
+| **Contact** | 1001ideasvenezuela@gmail.com |
 
 > ℹ️ Donors can verify an organization's tax-exempt status using the IRS
 > **Tax Exempt Organization Search**: https://www.irs.gov/charities-non-profits/tax-exempt-organization-search
