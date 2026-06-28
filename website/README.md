@@ -91,13 +91,11 @@ pinning the custom domain.
 > ⚠️ **Important:** GitHub Pages serves **static files only** — it **cannot run
 > the donation serverless function** (`netlify/functions/donate.js`). The page,
 > news, supplies, and donor wall all work on Pages, but **the donation upload
-> form's Submit needs a backend hosted elsewhere.** Options:
-> 1. Deploy just the function to **Cloudflare Workers / Netlify / Vercel** and
->    set `CONFIG.donateEndpoint` in `app.js` to that full URL, or
-> 2. Host the whole site on **Netlify** instead (does static + functions) and
->    point the domain there.
-> Until then, leave the form as-is (it shows the bank/Zelle info, which is what
-> most donors use anyway).
+> form's Submit needs a backend hosted elsewhere.** The chosen solution is a
+> **Cloudflare Worker** — see [`../donation-worker/README.md`](../donation-worker/README.md)
+> for deploy steps. Once deployed, set `CONFIG.donateEndpoint` in `app.js` to the
+> Worker URL and push.
+> Until then, the form shows the bank/Zelle info (what most donors use anyway).
 
 ### One-time GitHub setup
 1. Push to `main` (the workflow runs automatically).

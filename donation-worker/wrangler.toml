@@ -1,0 +1,16 @@
+# Cloudflare Worker config for the donation endpoint.
+# Deploy with `wrangler deploy` (or use the dashboard — see README.md).
+
+name = "ucv-donate"
+main = "src/donate.js"
+compatibility_date = "2026-06-01"
+
+# Non-secret variables (safe to commit).
+[vars]
+GITHUB_OWNER = "cev2030"
+PRIVATE_REPO = "uchicago-for-venezuela-private"
+PRIVATE_BRANCH = "main"
+
+# GITHUB_TOKEN is a SECRET — never put it here.
+# Set it with:  wrangler secret put GITHUB_TOKEN
+# (or in the dashboard: Worker → Settings → Variables → Add → Encrypt)
