@@ -27,11 +27,11 @@ Donor uploads screenshot
         │
         ▼
 /.netlify/functions/donate   ──►  PRIVATE repo
-  • generates code UCV-XXXX-XXXX     pending/donations_pending.csv  (full details)
+  • generates code U4V-XXXX-XXXX     pending/donations_pending.csv  (full details)
   • status = pending                 pending/screenshots/<code>.png (private image)
         │
         ▼
-Admin runs:  npm run approve -- UCV-XXXX-XXXX
+Admin runs:  npm run approve -- U4V-XXXX-XXXX
         │
         ▼
 PUBLIC repo  funding-account-info/donations.csv   ──►  donor wall on the site
@@ -75,9 +75,9 @@ On your machine, with the token exported:
 ```bash
 cd website
 GITHUB_TOKEN=ghp_xxx PUBLIC_REPO=uchicago-for-venezuela PRIVATE_REPO=uchicago-for-venezuela-private \
-  npm run approve -- UCV-XXXX-XXXX          # publish to donor wall
+  npm run approve -- U4V-XXXX-XXXX          # publish to donor wall
 # or
-  npm run approve -- UCV-XXXX-XXXX --reject  # mark rejected, keep private
+  npm run approve -- U4V-XXXX-XXXX --reject  # mark rejected, keep private
 ```
 
 ---

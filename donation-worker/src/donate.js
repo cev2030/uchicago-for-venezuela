@@ -3,7 +3,7 @@
    Mirrors the original Netlify function, adapted for Workers
    (module syntax, Web APIs instead of Node Buffer).
 
-   - Generates a unique tracking code (UCV-XXXX-XXXX)
+   - Generates a unique tracking code (U4V-XXXX-XXXX)
    - Uploads the screenshot to a PRIVATE repo (never the public site)
    - Appends a row to a pending CSV in that PRIVATE repo (status: pending)
    The public donations.csv is only updated later by the admin
@@ -58,7 +58,7 @@ function base64ToUtf8(b64) {
 function genCode() {
   const t = Date.now().toString(36).toUpperCase();
   const r = Math.random().toString(36).slice(2, 6).toUpperCase();
-  return `UCV-${t}-${r}`;
+  return `U4V-${t}-${r}`;
 }
 
 function csvCell(v) {
@@ -70,7 +70,7 @@ function ghHeaders(env) {
   return {
     Authorization: `Bearer ${env.GITHUB_TOKEN}`,
     Accept: "application/vnd.github+json",
-    "User-Agent": "ucv-donate-worker",
+    "User-Agent": "u4v-donate-worker",
     "X-GitHub-Api-Version": "2022-11-28",
   };
 }

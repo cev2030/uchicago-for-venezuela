@@ -21,7 +21,7 @@ function ghHeaders() {
   return {
     Authorization: `Bearer ${env("GITHUB_TOKEN")}`,
     Accept: "application/vnd.github+json",
-    "User-Agent": "ucv-donate-fn",
+    "User-Agent": "u4v-donate-fn",
     "X-GitHub-Api-Version": "2022-11-28",
   };
 }
@@ -56,7 +56,7 @@ async function putFile(path, contentBuf, message, sha) {
 function genCode() {
   const t = Date.now().toString(36).toUpperCase();
   const r = Math.random().toString(36).slice(2, 6).toUpperCase();
-  return `UCV-${t}-${r}`;
+  return `U4V-${t}-${r}`;
 }
 
 function csvCell(v) {
