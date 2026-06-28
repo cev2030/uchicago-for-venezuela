@@ -11,8 +11,8 @@ const CONFIG = {
   suppliesCsv: "supplies-needed/supplies_needed.csv",
   boughtCsv: "supplies-needed/supplies_bought.csv",
   donationsCsv: "funding-account-info/donations.csv",
-  // Serverless endpoint that records a pending donation (see netlify/functions/donate.js)
-  donateEndpoint: "/.netlify/functions/donate",
+  // Serverless endpoint that records a pending donation (Cloudflare Worker; see donation-worker/)
+  donateEndpoint: "https://u4v-donate.cev-d87.workers.dev/",
   maxUploadBytes: 5 * 1024 * 1024,
   // Only these articles are shown on the landing page (in this order).
   // The full dataset still lives in the news CSV.
