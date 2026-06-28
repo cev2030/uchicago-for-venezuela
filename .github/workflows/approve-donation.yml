@@ -1,0 +1,59 @@
+name: Approve donation
+
+# One-click approval: Actions tab → this workflow → Run workflow →
+# paste the donation code → it publishes to the public donor wall
+# (or rejects it, keeping it private). No local tools needed.
+
+on:
+  workflow_dispatch:
+    inputs:
+      code:
+        description: "Donation code (e.g. U4V-XXXX-XXXX)"
+        required: true
+        type: string
+      action:
+        description: "approve = publish to donor wall · reject = keep private"
+        required: true
+        type: choice
+        options:
+          - approve
+          - reject
+        default: approve
+
+permissions:
+  contents: read
+
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run approval
+        env:
+          # A PAT with Contents read/write on BOTH the public and private repos.
+          # Stored as a repo secret (see README). Mapped to GITHUB_TOKEN here.
+          GITHUB_TOKEN: ${{ secrets.APPROVE_TOKEN }}
+          GITHUB_OWNER: cev2030
+          PUBLIC_REPO: uchicago-for-venezuela
+          PRIVATE_REPO: uchicago-for-venezuela-private
+          BRANCH: main
+          # Passed via env (not inline) to avoid shell injection.
+          CODE: ${{ inputs.code }}
+          ACTION: ${{ inputs.action }}
+        run: |
+          if [ -z "$GITHUB_TOKEN" ]; then
+            echo "::error::Missing APPROVE_TOKEN secret. Add it in Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          if [ "$ACTION" = "reject" ]; then
+            node website/scripts/approve-donation.mjs "$CODE" --reject
+          else
+            node website/scripts/approve-donation.mjs "$CODE"
+          fi
