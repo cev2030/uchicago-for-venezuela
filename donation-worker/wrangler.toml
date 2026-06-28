@@ -1,7 +1,7 @@
 # Cloudflare Worker config for the donation endpoint.
 # Deploy with `wrangler deploy` (or use the dashboard — see README.md).
 
-name = "ucv-donate"
+name = "u4v-donate"
 main = "src/donate.js"
 compatibility_date = "2026-06-01"
 

@@ -5,10 +5,10 @@ Serverless endpoint that makes the donation form on
 
 ```
 Donor → form on the site → POST this Worker
-        → Worker generates code UCV-XXXX-XXXX
+        → Worker generates code U4V-XXXX-XXXX
         → uploads screenshot + pending row to the PRIVATE repo
         → returns the code to the donor
-Admin  → npm run approve -- UCV-XXXX-XXXX  → publishes to the public donor wall
+Admin  → npm run approve -- U4V-XXXX-XXXX  → publishes to the public donor wall
 ```
 
 Screenshots and donor emails go **only** to the private repo, never to the
@@ -31,7 +31,7 @@ public site. This Worker holds the GitHub token as an encrypted secret.
 Best if you don't have Node/npm installed.
 
 1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Create Worker**.
-2. Name it **`ucv-donate`** → **Deploy** (accept the starter code).
+2. Name it **`u4v-donate`** → **Deploy** (accept the starter code).
 3. Click **Edit code**. Delete the starter code, paste the entire contents of
    [`src/donate.js`](src/donate.js), then **Deploy**.
 4. Go to the Worker → **Settings → Variables and Secrets** and add:
@@ -45,7 +45,7 @@ Best if you don't have Node/npm installed.
 
    Save / deploy after adding them.
 5. Copy the Worker URL shown at the top — it looks like
-   **`https://ucv-donate.<your-subdomain>.workers.dev`**.
+   **`https://u4v-donate.<your-subdomain>.workers.dev`**.
 6. **Send me that URL** and I'll wire the form to it (update
    `website/app.js` → `CONFIG.donateEndpoint` and push). Or do it yourself:
    set `donateEndpoint` to that URL and commit.
@@ -68,11 +68,11 @@ wrangler deploy                      # prints the workers.dev URL
 ## Test it
 
 ```bash
-curl -i -X POST https://ucv-donate.<your-subdomain>.workers.dev \
+curl -i -X POST https://u4v-donate.<your-subdomain>.workers.dev \
   -H "Content-Type: application/json" \
   -d '{"name":"Test","amount":5,"currency":"USD","method":"Zelle","screenshotBase64":"iVBORw0KGgo=","screenshotName":"t.png"}'
 ```
-Expect `{"ok":true,"code":"UCV-..."}`, and a new row + image in the **private**
+Expect `{"ok":true,"code":"U4V-..."}`, and a new row + image in the **private**
 repo under `pending/`. (Delete that test row/image afterward.)
 
 ## Notes
