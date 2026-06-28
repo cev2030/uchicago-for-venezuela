@@ -20,6 +20,8 @@ const GH = "https://api.github.com";
 
 // Browser origins allowed to call this Worker.
 const ALLOWED_ORIGINS = [
+  "https://uchicagostudentsforvenezuela.com",
+  "https://www.uchicagostudentsforvenezuela.com",
   "https://uchicagoforvenezuela.com",
   "https://www.uchicagoforvenezuela.com",
   "http://localhost:8123",
