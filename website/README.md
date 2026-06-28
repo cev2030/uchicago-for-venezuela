@@ -91,7 +91,7 @@ GITHUB_TOKEN=ghp_xxx PUBLIC_REPO=uchicago-for-venezuela PRIVATE_REPO=uchicago-fo
 
 ---
 
-## Hosting on GitHub Pages (uchicagoforvenezuela.com)
+## Hosting on GitHub Pages (uchicagostudentsforvenezuela.com)
 
 The repo includes a workflow (`.github/workflows/pages.yml`) that publishes the
 `website/` folder to GitHub Pages on every push to `main`, and a `CNAME` file
@@ -109,7 +109,7 @@ pinning the custom domain.
 ### One-time GitHub setup
 1. Push to `main` (the workflow runs automatically).
 2. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Repo **Settings → Pages → Custom domain**: confirm `uchicagoforvenezuela.com`
+3. Repo **Settings → Pages → Custom domain**: confirm `uchicagostudentsforvenezuela.com`
    is set (the `CNAME` file pre-fills it), then tick **Enforce HTTPS** once the
    certificate is issued (can take a few minutes to an hour).
 
@@ -130,7 +130,7 @@ A/ALIAS records first):
 | CNAME | `www` | `cev2030.github.io.` |
 
 DNS can take 10 minutes to a few hours to propagate. The site will then be live
-at `https://uchicagoforvenezuela.com`.
+at `https://uchicagostudentsforvenezuela.com`.
 
 ---
 
