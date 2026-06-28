@@ -200,6 +200,17 @@ table.data .num { text-align: right; white-space: nowrap; }
 .footer__links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
 .footer__links a { color: #fff; text-decoration: none; opacity: .85; font-size: .92rem; }
 .footer__links a:hover { opacity: 1; }
+.footer__disclaimer { font-size: .8rem; color: rgba(255,255,255,.6); margin: 0; padding-bottom: 28px; max-width: 760px; }
+
+/* ---------- Disclaimers / notes ---------- */
+.disclaimer { font-size: .85rem; color: var(--muted); border: 1px dashed var(--line); background: #fff;
+  border-radius: var(--radius); padding: 12px 16px; margin: 0 auto 28px; max-width: 760px; text-align: center; }
+.disclaimer--donate { border-color: var(--maroon-soft); }
+.verify-note { background: #eef5f9; border-left: 4px solid var(--slate); border-radius: 8px;
+  padding: 10px 14px; font-size: .9rem; margin: 0 0 12px; }
+.about-social { margin-top: 18px; font-size: .92rem; color: var(--muted); }
+.about-social a { font-weight: 600; text-decoration: none; }
+.about-social a:hover { text-decoration: underline; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
@@ -215,4 +226,22 @@ table.data .num { text-align: right; white-space: nowrap; }
   .nav__cta { border-radius: 0; text-align: center; }
   .nav__checkbox:checked ~ .nav__links { max-height: 320px; }
   .nav { background: var(--maroon); }
+  .brand__text { font-size: .92rem; }
+}
+
+/* On phones, fit the supplies-needed table to the screen instead of
+   scrolling inside a box — scales it down to mirror the desktop layout. */
+@media (max-width: 680px) {
+  #suppliesTable { overflow-x: visible; }
+  #suppliesTable table.data { font-size: .68rem; table-layout: fixed; }
+  #suppliesTable table.data th,
+  #suppliesTable table.data td { padding: 6px 6px; overflow-wrap: anywhere; word-break: break-word; }
+  #suppliesTable table.data th:nth-child(1),
+  #suppliesTable table.data td:nth-child(1) { width: 26%; }
+  #suppliesTable table.data th:nth-child(3),
+  #suppliesTable table.data td:nth-child(3) { width: 16%; }
+  #suppliesTable table.data th:nth-child(4),
+  #suppliesTable table.data td:nth-child(4) { width: 24%; }
+  #suppliesTable table.data .num { white-space: normal; }
+  .brand__text { font-size: .82rem; }
 }

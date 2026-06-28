@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UChicago For Venezuela — Earthquake Relief</title>
-  <meta name="description" content="Mobilizing the UChicago community to donate, fund relief supplies, and support Venezuelan students and their families after the 2026 earthquakes." />
-  <meta property="og:title" content="UChicago For Venezuela — Earthquake Relief" />
+  <title>UChicago Students for Venezuela — Earthquake Relief</title>
+  <meta name="description" content="An independent University of Chicago student initiative raising personal donations to support Venezuelan students volunteering in the earthquake response and the families affected by the 2026 earthquakes." />
+  <meta property="og:title" content="UChicago Students for Venezuela — Earthquake Relief" />
   <meta property="og:description" content="Donate to fund relief supplies and support Venezuelan students and families after the 2026 earthquakes. Tax-deductible through 1001 Ideas, INC (501(c)(3))." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#top" class="brand" aria-label="UChicago For Venezuela home">
+      <a href="#top" class="brand" aria-label="UChicago Students for Venezuela home">
         <svg class="brand__flag" viewBox="0 0 100 100" aria-hidden="true">
           <defs><clipPath id="flagClip"><circle cx="50" cy="50" r="48"/></clipPath></defs>
           <g clip-path="url(#flagClip)">
@@ -38,7 +38,7 @@
           </g>
           <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="3"/>
         </svg>
-        <span class="brand__text">UChicago&nbsp;<em>for</em>&nbsp;Venezuela</span>
+        <span class="brand__text">UChicago&nbsp;Students&nbsp;<em>for</em>&nbsp;Venezuela</span>
       </a>
 
       <input type="checkbox" id="navToggle" class="nav__checkbox" />
@@ -59,7 +59,7 @@
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="top">
     <div class="hero__content">
-      <p class="hero__eyebrow">A UChicago community relief effort</p>
+      <p class="hero__eyebrow">An independent UChicago student initiative</p>
       <h1 class="hero__title">Stand with Venezuela after the 2026 earthquakes.</h1>
       <p class="hero__lede">
         Mobilizing the UChicago community to donate, fund relief supplies, and
@@ -109,6 +109,12 @@
         </p>
       </header>
 
+      <p class="disclaimer disclaimer--donate">
+        This initiative is organized independently by University of Chicago
+        students. It is not sponsored, endorsed, or administered by the
+        University of Chicago.
+      </p>
+
       <div class="donate-grid">
         <!-- HOW TO DONATE -->
         <div class="card donate-info">
@@ -121,7 +127,7 @@
               <code id="zelleEmail">finanzasmiliun@gmail.com</code>
               <button class="copybtn" data-copy="finanzasmiliun@gmail.com">Copy</button>
             </p>
-            <p class="muted">Recipient shows as <strong>1001 Ideas, INC</strong>. Add the note “Venezuela earthquake relief.”</p>
+            <p class="muted">Recipient shows as <strong>1001 Ideas, INC</strong>, a registered <strong>501(c)(3)</strong> nonprofit. Add the note “Venezuela earthquake relief.”</p>
           </div>
 
           <div class="method">
@@ -141,7 +147,8 @@
         <!-- UPLOAD FORM -->
         <div class="card donate-form">
           <h3>Register your donation</h3>
-          <p class="muted">Already sent your gift? Upload the confirmation screenshot so we can verify and acknowledge it. Every donation gets a unique tracking code.</p>
+          <p class="verify-note">🔒 Your confirmation screenshot is used <strong>only to verify your donation</strong>. It is kept private and is <strong>never published</strong>.</p>
+          <p class="muted">Already sent your gift? Upload the confirmation screenshot below. Every donation gets a unique tracking code.</p>
 
           <form id="donationForm" novalidate>
             <label class="field">
@@ -186,7 +193,7 @@
             <label class="field">
               <span>Transfer screenshot *</span>
               <input type="file" name="screenshot" id="screenshot" accept="image/*" required />
-              <small class="muted">Kept private for verification only — never published. Max 5&nbsp;MB.</small>
+              <small class="muted">Kept private for verification only. Max 5&nbsp;MB.</small>
             </label>
 
             <button type="submit" class="btn btn--maroon" id="submitBtn">Submit donation</button>
@@ -229,6 +236,11 @@
             <li>Direct delivery to student organizations in Caracas</li>
             <li>Public, itemized record of supplies bought &amp; delivered</li>
           </ul>
+          <p class="about-social">Learn more about 1001 Ideas:
+            <a href="https://www.instagram.com/comunidad1001/" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="https://www.youtube.com/@IdeasParaMiPais" target="_blank" rel="noopener">YouTube</a> ·
+            <a href="https://www.facebook.com/comunidad1001/" target="_blank" rel="noopener">Facebook</a>
+          </p>
         </div>
         <aside class="card trust">
           <h3>Tax-deductible giving</h3>
@@ -238,7 +250,7 @@
           <p class="muted">For any single gift of $250+, request a written
           acknowledgment by emailing <a href="mailto:1001ideasvenezuela@gmail.com">1001ideasvenezuela@gmail.com</a>.</p>
           <p class="muted">Verify status via the IRS
-          <a href="https://www.irs.gov/charities-non-profits/tax-exempt-organization-search" target="_blank" rel="noopener">Tax Exempt Organization Search</a>.</p>
+          <a href="https://apps.irs.gov/app/eos/" target="_blank" rel="noopener">Tax Exempt Organization Search</a>.</p>
           <p class="fineprint">This is general information, not legal or tax advice.</p>
         </aside>
       </div>
@@ -261,6 +273,7 @@
 
       <div class="impact-tabs">
         <h3>Supplies needed</h3>
+        <p class="muted">Prices are estimates based on the Venezuelan economy and may vary by brand, region, and availability.</p>
         <div id="suppliesTable" class="table-wrap"><p class="loading">Loading supplies…</p></div>
       </div>
 
@@ -276,17 +289,22 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div>
-        <span class="brand__text brand__text--footer">UChicago&nbsp;<em>for</em>&nbsp;Venezuela</span>
-        <p class="muted">A community relief effort. Donations received by 1001 Ideas, INC (501(c)(3)).</p>
+        <span class="brand__text brand__text--footer">UChicago&nbsp;Students&nbsp;<em>for</em>&nbsp;Venezuela</span>
+        <p class="muted">Donations received by 1001 Ideas, INC (501(c)(3)).</p>
       </div>
       <nav class="footer__links">
         <a href="#news">News</a>
         <a href="#donate">Donate</a>
         <a href="#impact">Where it goes</a>
         <a href="#about">About</a>
-        <a href="mailto:finanzasmiliun@gmail.com">Contact</a>
+        <a href="mailto:1001ideasvenezuela@gmail.com">Contact</a>
       </nav>
     </div>
+    <p class="container footer__disclaimer">
+      This initiative is organized independently by University of Chicago
+      students. It is not sponsored, endorsed, or administered by the
+      University of Chicago.
+    </p>
     <div class="tricolor tricolor--footer" aria-hidden="true"><i></i><i></i><i></i></div>
   </footer>
 
