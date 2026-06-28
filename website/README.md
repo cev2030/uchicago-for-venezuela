@@ -70,8 +70,17 @@ on both `uchicago-for-venezuela` (public) and `uchicago-for-venezuela-private`.
 > minor signature tweaks (export a `(req, res)` handler). Ask and it can be ported.
 
 ### 4. Approve donations (admin)
-On your machine, with the token exported:
 
+**Recommended — one click, no tools (GitHub Action):**
+1. Add a repo secret once: **Settings → Secrets and variables → Actions → New
+   repository secret**, name `APPROVE_TOKEN`, value = a fine-grained PAT with
+   *Contents: Read and write* on **both** the public and private repos (you can
+   reuse the same token the Cloudflare Worker uses).
+2. To approve: repo **Actions → "Approve donation" → Run workflow**, paste the
+   donation **code**, choose `approve` (or `reject`), and run. It publishes the
+   public-safe row to the donor wall and marks the private row handled.
+
+**Alternative — locally (needs Node 18+):**
 ```bash
 cd website
 GITHUB_TOKEN=ghp_xxx PUBLIC_REPO=uchicago-for-venezuela PRIVATE_REPO=uchicago-for-venezuela-private \
