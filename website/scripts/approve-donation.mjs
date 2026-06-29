@@ -54,10 +54,17 @@ async function putFile(repo, path, content, message, sha) {
 }
 const cell = (v) => { const s = String(v ?? "").replace(/\r?\n/g, " ").trim(); return /[",]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
 
-function parseCSV(text) {
-  const lines = text.split(/\r?\n/).filter(l => l.trim() !== "");
-  const headers = (lines.shift() || "").split(",").map(h => h.trim());
-  return { headers, rows: lines.map(l => splitCsvLine(l)) };
+// Fixed column order the worker always writes. We rely on POSITION, not a
+// header row — so a missing/edited header can't break matching.
+const PENDING_COLS = ["code", "timestamp", "donor_name", "is_anonymous", "amount", "currency", "method", "email", "screenshot_file", "status"];
+const C = Object.fromEntries(PENDING_COLS.map((h, i) => [h, i]));
+
+function parsePending(text) {
+  text = text.replace(/^﻿/, ""); // strip a leading BOM if present
+  let lines = text.split(/\r?\n/).filter(l => l.trim() !== "");
+  // Skip the header line only if one is actually present.
+  if (lines.length && norm(splitCsvLine(lines[0])[0]) === "CODE") lines = lines.slice(1);
+  return lines.map(splitCsvLine);
 }
 function splitCsvLine(line) {
   const out = []; let f = "", q = false;
@@ -74,18 +81,21 @@ function splitCsvLine(line) {
   const pendingPath = "pending/donations_pending.csv";
   const pending = await getFile(PRIVATE_REPO, pendingPath);
   if (!pending.content) { console.error("No pending file found."); process.exit(1); }
-  const { headers: ph, rows } = parseCSV(pending.content);
-  const idx = Object.fromEntries(ph.map((h, i) => [h, i]));
-  const match = rows.find(r => norm(r[idx.code]) === code);
-  if (!match) { console.error(`Code ${process.argv[2]} not found in pending list.`); process.exit(1); }
+  const rows = parsePending(pending.content);
+  const match = rows.find(r => norm(r[C.code]) === code);
+  if (!match) {
+    console.error(`Code ${process.argv[2]} not found in pending list.`);
+    console.error(`[debug] rows=${rows.length} normInput="${code}" pendingCodes=${JSON.stringify(rows.map(r => norm(r[C.code])))}`);
+    process.exit(1);
+  }
 
   // Use the exact code stored in the file for all output (not the typed input).
-  const realCode = (match[idx.code] || "").trim();
+  const realCode = (match[C.code] || "").trim();
   const newStatus = reject ? "rejected" : "approved";
-  match[idx.status] = newStatus;
+  match[C.status] = newStatus;
 
-  // 2) rewrite pending file with updated status
-  const rebuilt = [ph.join(","), ...rows.map(r => r.map(cell).join(","))].join("\n") + "\n";
+  // 2) rewrite pending file with the status updated AND the header restored
+  const rebuilt = [PENDING_COLS.join(","), ...rows.map(r => r.map(cell).join(","))].join("\n") + "\n";
   await putFile(PRIVATE_REPO, pendingPath, rebuilt, `Mark ${realCode} ${newStatus}`, pending.sha);
 
   if (reject) { console.log(`✓ ${realCode} marked rejected. Not published.`); return; }
@@ -95,9 +105,9 @@ function splitCsvLine(line) {
   const pub = await getFile(PUBLIC_REPO, pubPath);
   const pubHeader = "code,date,donor_name,amount,currency,method,status\n";
   const base = pub.content && pub.content.trim() ? pub.content.replace(/\n?$/, "\n") : pubHeader;
-  const date = (match[idx.timestamp] || new Date().toISOString()).slice(0, 10);
-  const name = match[idx.is_anonymous] === "true" ? "Anonymous" : (match[idx.donor_name] || "Anonymous");
-  const pubRow = [realCode, date, name, match[idx.amount], match[idx.currency], match[idx.method], "approved"]
+  const date = (match[C.timestamp] || new Date().toISOString()).slice(0, 10);
+  const name = norm(match[C.is_anonymous]) === "TRUE" ? "Anonymous" : (match[C.donor_name] || "Anonymous");
+  const pubRow = [realCode, date, name, match[C.amount], match[C.currency], match[C.method], "approved"]
     .map(cell).join(",") + "\n";
   await putFile(PUBLIC_REPO, pubPath, base + pubRow, `Publish approved donation ${realCode}`, pub.sha);
 
