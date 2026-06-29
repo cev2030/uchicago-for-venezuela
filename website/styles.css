@@ -200,7 +200,12 @@ table.data .num { text-align: right; white-space: nowrap; }
 .footer__links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
 .footer__links a { color: #fff; text-decoration: none; opacity: .85; font-size: .92rem; }
 .footer__links a:hover { opacity: 1; }
-.footer__disclaimer { font-size: .8rem; color: rgba(255,255,255,.6); margin: 0; padding-bottom: 28px; max-width: 760px; }
+.footer__bottom { display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; flex-wrap: wrap; padding-bottom: 28px; }
+.footer__disclaimer { font-size: .8rem; color: rgba(255,255,255,.6); margin: 0; max-width: 620px; }
+.footer__contact { display: flex; flex-direction: column; gap: 2px; font-size: .82rem; color: rgba(255,255,255,.75); text-align: right; }
+.footer__contact strong { color: #fff; margin-bottom: 3px; }
+.footer__contact a { color: var(--ven-yellow); text-decoration: none; }
+.footer__contact a:hover { text-decoration: underline; }
 
 /* ---------- Disclaimers / notes ---------- */
 .disclaimer { font-size: .85rem; color: var(--muted); border: 1px dashed var(--line); background: #fff;
@@ -244,4 +249,5 @@ table.data .num { text-align: right; white-space: nowrap; }
   #suppliesTable table.data td:nth-child(4) { width: 24%; }
   #suppliesTable table.data .num { white-space: normal; }
   .brand__text { font-size: .82rem; }
+  .footer__contact { text-align: left; }
 }
