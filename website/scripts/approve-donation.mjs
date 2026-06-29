@@ -22,7 +22,9 @@ const PUBLIC_REPO = process.env.PUBLIC_REPO || "uchicago-for-venezuela";
 const PRIVATE_REPO = process.env.PRIVATE_REPO || "uchicago-for-venezuela-private";
 const BRANCH = process.env.BRANCH || "main";
 
-const code = process.argv[2];
+// Normalize codes so stray whitespace / case from copy-paste still match.
+const norm = (s) => (s || "").trim().toUpperCase();
+const code = norm(process.argv[2]);
 const reject = process.argv.includes("--reject");
 
 if (!TOKEN) { console.error("Set GITHUB_TOKEN."); process.exit(1); }
@@ -74,7 +76,7 @@ function splitCsvLine(line) {
   if (!pending.content) { console.error("No pending file found."); process.exit(1); }
   const { headers: ph, rows } = parseCSV(pending.content);
   const idx = Object.fromEntries(ph.map((h, i) => [h, i]));
-  const match = rows.find(r => r[idx.code] === code);
+  const match = rows.find(r => norm(r[idx.code]) === code);
   if (!match) { console.error(`Code ${code} not found in pending list.`); process.exit(1); }
 
   const newStatus = reject ? "rejected" : "approved";
