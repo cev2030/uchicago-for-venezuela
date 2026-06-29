@@ -22,8 +22,8 @@ const PUBLIC_REPO = process.env.PUBLIC_REPO || "uchicago-for-venezuela";
 const PRIVATE_REPO = process.env.PRIVATE_REPO || "uchicago-for-venezuela-private";
 const BRANCH = process.env.BRANCH || "main";
 
-// Normalize codes so stray whitespace / case from copy-paste still match.
-const norm = (s) => (s || "").trim().toUpperCase();
+// Normalize codes so whitespace, case, and dash variants (-, –, —) all match.
+const norm = (s) => (s || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
 const code = norm(process.argv[2]);
 const reject = process.argv.includes("--reject");
 
@@ -77,16 +77,18 @@ function splitCsvLine(line) {
   const { headers: ph, rows } = parseCSV(pending.content);
   const idx = Object.fromEntries(ph.map((h, i) => [h, i]));
   const match = rows.find(r => norm(r[idx.code]) === code);
-  if (!match) { console.error(`Code ${code} not found in pending list.`); process.exit(1); }
+  if (!match) { console.error(`Code ${process.argv[2]} not found in pending list.`); process.exit(1); }
 
+  // Use the exact code stored in the file for all output (not the typed input).
+  const realCode = (match[idx.code] || "").trim();
   const newStatus = reject ? "rejected" : "approved";
   match[idx.status] = newStatus;
 
   // 2) rewrite pending file with updated status
   const rebuilt = [ph.join(","), ...rows.map(r => r.map(cell).join(","))].join("\n") + "\n";
-  await putFile(PRIVATE_REPO, pendingPath, rebuilt, `Mark ${code} ${newStatus}`, pending.sha);
+  await putFile(PRIVATE_REPO, pendingPath, rebuilt, `Mark ${realCode} ${newStatus}`, pending.sha);
 
-  if (reject) { console.log(`✓ ${code} marked rejected. Not published.`); return; }
+  if (reject) { console.log(`✓ ${realCode} marked rejected. Not published.`); return; }
 
   // 3) append public-safe row to the public ledger
   const pubPath = "funding-account-info/donations.csv";
@@ -95,9 +97,9 @@ function splitCsvLine(line) {
   const base = pub.content && pub.content.trim() ? pub.content.replace(/\n?$/, "\n") : pubHeader;
   const date = (match[idx.timestamp] || new Date().toISOString()).slice(0, 10);
   const name = match[idx.is_anonymous] === "true" ? "Anonymous" : (match[idx.donor_name] || "Anonymous");
-  const pubRow = [code, date, name, match[idx.amount], match[idx.currency], match[idx.method], "approved"]
+  const pubRow = [realCode, date, name, match[idx.amount], match[idx.currency], match[idx.method], "approved"]
     .map(cell).join(",") + "\n";
-  await putFile(PUBLIC_REPO, pubPath, base + pubRow, `Publish approved donation ${code}`, pub.sha);
+  await putFile(PUBLIC_REPO, pubPath, base + pubRow, `Publish approved donation ${realCode}`, pub.sha);
 
-  console.log(`✓ ${code} approved and published to the public donor ledger.`);
+  console.log(`✓ ${realCode} approved and published to the public donor ledger.`);
 })().catch(e => { console.error(e.message); process.exit(1); });
