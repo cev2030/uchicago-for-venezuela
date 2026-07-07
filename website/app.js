@@ -17,9 +17,9 @@ const CONFIG = {
   // Only these articles are shown on the landing page (in this order).
   // The full dataset still lives in the news CSV.
   featuredNews: [
-    "https://www.cnn.com/2026/06/28/world/live-news/venezuela-earthquake-hnk",
-    "https://www.nbcnews.com/world/venezuela/venezuela-earthquake-latest-death-toll-missing-rescues-la-guaira-rcna352179",
-    "https://www.foxnews.com/video/6399719200112",
+    "https://www.reuters.com/world/americas/death-toll-venezuela-quakes-rises-3535-thousands-remain-displaced-2026-07-06/",
+    "https://www.bbc.com/news/articles/czx5k8pxdevo",
+    "https://www.foxnews.com/world/security-guard-survives-eight-days-beneath-collapsed-shopping-center-venezuela-earthquakes",
   ],
 };
 
