@@ -190,6 +190,7 @@ table.data .num { text-align: right; white-space: nowrap; }
 .status-delivered { background: #e3f4e8; color: #1d7a3e; }
 .status-purchased { background: #e4eef6; color: var(--ven-blue); }
 .status-planned { background: #f6efe1; color: #8a6d1d; }
+.status-delivery { background: #fdeeb3; color: #7a5c00; }
 .empty { padding: 26px; text-align: center; color: var(--muted); }
 
 /* ---------- Footer ---------- */

@@ -128,7 +128,7 @@ async function loadBought() {
         <td class="num">${esc(r.quantity)}</td>
         <td class="num">$${esc(r.total_cost_usd)}</td>
         <td>${statusPill(r.status)}</td>
-        <td>${esc(r.delivered_to)}</td>
+        <td>${r.delivered_to ? `<span class="status-pill status-delivery">${esc(r.delivered_to)}</span>` : ""}</td>
       </tr>`).join("");
     el.innerHTML = `
       <table class="data">
