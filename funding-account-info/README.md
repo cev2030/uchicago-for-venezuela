@@ -1,4 +1,4 @@
-# Donate — UChicago For Venezuela
+# Donate — UChicago Students for Venezuela
 
 All donations support earthquake relief for Venezuelan families and student
 volunteers: buying medical supplies, food, rescue equipment, and logistics
@@ -12,7 +12,7 @@ the extent allowed by law.** (See [Tax-Deductibility](#tax-deductibility--501c3-
 
 ## How to donate
 
-### Option 1 — Zelle (preferred)
+**Zelle is currently the only donation method we accept.**
 
 Zelle is the fastest, lowest-friction way to give — no fees, and the funds
 arrive almost instantly. Most U.S. banking apps have Zelle built in.
@@ -32,28 +32,6 @@ arrive almost instantly. Most U.S. banking apps have Zelle built in.
 
 > 💡 If you'd like a donation receipt, email us your name, the amount, and
 > the date at **finanzasmiliun@gmail.com**.
-
-### Option 2 — Bank wire / ACH transfer
-
-Use this for larger gifts or if you prefer a bank transfer. You'll need the
-details below.
-
-| Field | Value |
-|---|---|
-| **Account name** | 1001 Ideas, INC |
-| **Bank** | Bank of America |
-| **Account number** | [REDACTED] |
-| **Routing number** | [REDACTED] |
-| **Account / bank address** | 1400 NW 107th Ave, Suite 203, Miami, FL 33172 |
-
-Notes:
-- The routing number above (`[REDACTED]`) is Bank of America's **Florida
-  ACH/wire** routing number. For some **international wires**, banks require
-  Bank of America's SWIFT/BIC code **`[REDACTED]`** — ask your sending bank
-  which they need.
-- Please add **"Venezuela earthquake relief"** as the wire reference/memo.
-- Your own bank may charge a wire fee; Zelle does not. This is why Zelle is
-  preferred for most donors.
 
 ---
 
