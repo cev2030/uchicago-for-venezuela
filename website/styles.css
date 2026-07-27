@@ -193,6 +193,32 @@ table.data .num { text-align: right; white-space: nowrap; }
 .status-delivery { background: #fdeeb3; color: #7a5c00; }
 .empty { padding: 26px; text-align: center; color: var(--muted); }
 
+/* ---------- Delivery carousel ---------- */
+.carousel-wrap { position: relative; margin-top: 18px; }
+.carousel {
+  display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x proximity;
+  scroll-behavior: smooth; padding: 4px 2px 14px; -webkit-overflow-scrolling: touch;
+}
+.carousel img {
+  height: 440px; width: auto; flex: 0 0 auto; scroll-snap-align: center;
+  border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow);
+  object-fit: cover;
+}
+.carousel:focus-visible { outline: 2px solid var(--gold); }
+.carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  width: 42px; height: 42px; border-radius: 50%; border: none; cursor: pointer;
+  background: var(--maroon); color: #fff; font-size: 1.6rem; line-height: 1;
+  display: grid; place-items: center; box-shadow: var(--shadow); opacity: .92;
+}
+.carousel-btn:hover { background: var(--maroon-dark); opacity: 1; }
+.carousel-btn--prev { left: -8px; }
+.carousel-btn--next { right: -8px; }
+@media (max-width: 860px) {
+  .carousel img { height: 300px; }
+  .carousel-btn { width: 36px; height: 36px; font-size: 1.3rem; }
+}
+
 /* ---------- Footer ---------- */
 .footer { background: var(--maroon-dark); color: #fff; }
 .footer__inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-top: 36px; padding-bottom: 36px; }

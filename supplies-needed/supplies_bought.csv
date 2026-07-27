@@ -1,4 +1,8 @@
 date,item_en,category,quantity,unit_cost_usd,total_cost_usd,supplier,status,delivered_to,notes
-2026-07-02,Canned sardines,Food,2 boxes (24 units/box),17.00,34.00,,Purchased,UCAB — July 7,24 units per box
-2026-07-02,Canned tuna (Atún Campomar),Food,1/2 box (24 units),2.10,50.40,,Purchased,UCAB — July 7,Atún Campomar brand
-2026-07-02,Drinking water (12 x 600 cc),Food,42 boxes,3.60,151.20,,Purchased,UCAB — July 7,12 x 600 cc per box
+2026-07-02,Canned sardines,Food,2 boxes (24 units/box),17.00,34.00,,Delivered,UCAB — July 7,24 units per box
+2026-07-02,Canned tuna (Atún Campomar),Food,1/2 box (24 units),2.10,50.40,,Delivered,UCAB — July 7,Atún Campomar brand
+2026-07-02,Drinking water (12 x 600 cc),Food,42 boxes,3.60,151.20,,Delivered,UCAB — July 7,12 x 600 cc per box
+2026-07-16,Drinking water (600 ml x 12),Food,14 boxes (168 units),3.40,47.60,,Delivered,UCAB — July 20,12 x 600 ml per box
+2026-07-16,Corn flour (Kaly O'Lucha),Food,1 box (20 x 1 kg),26.00,26.00,,Delivered,UCAB — July 20,20 bags of 1 kg per box
+2026-07-16,Pasta (Ronco),Food,1 box (12 x 1/2 kg),15.60,15.60,,Delivered,UCAB — July 20,12 packs of 1/2 kg per box
+2026-07-16,Rice (Aurora),Food,1 box (24 x 1 kg),31.20,31.20,,Delivered,UCAB — July 20,24 bags of 1 kg per box

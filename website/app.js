@@ -266,9 +266,21 @@ function initNav() {
     a.addEventListener("click", () => { toggle.checked = false; }));
 }
 
+/* ---------- delivery carousel ---------- */
+function initCarousel() {
+  const track = document.getElementById("carousel");
+  if (!track) return;
+  const step = () => Math.min(track.clientWidth * 0.8, 640);
+  document.getElementById("carouselPrev")?.addEventListener("click", () =>
+    track.scrollBy({ left: -step(), behavior: "smooth" }));
+  document.getElementById("carouselNext")?.addEventListener("click", () =>
+    track.scrollBy({ left: step(), behavior: "smooth" }));
+}
+
 /* ---------- boot ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   initNav();
+  initCarousel();
   initCopy();
   initForm();
   loadNews();
