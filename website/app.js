@@ -17,9 +17,9 @@ const CONFIG = {
   // Only these articles are shown on the landing page (in this order).
   // The full dataset still lives in the news CSV.
   featuredNews: [
-    "https://www.reuters.com/world/americas/death-toll-venezuela-quakes-rises-3535-thousands-remain-displaced-2026-07-06/",
-    "https://www.bbc.com/news/articles/czx5k8pxdevo",
-    "https://www.foxnews.com/world/security-guard-survives-eight-days-beneath-collapsed-shopping-center-venezuela-earthquakes",
+    "https://www.euronews.com/2026/07/25/the-toll-of-the-tragedy-one-month-after-venezuelas-double-earthquake",
+    "https://www.pbs.org/newshour/show/aid-worker-describes-crisis-in-venezuela-one-month-after-devastating-earthquakes",
+    "https://www.reuters.com/business/environment/venezuela-quakes-caused-196-billion-damage-world-bank-report-shows-2026-07-23/",
   ],
 };
 
